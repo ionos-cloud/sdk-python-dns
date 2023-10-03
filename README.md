@@ -1,3 +1,4 @@
+![CI](https://github.com/ionos-cloud/sdk-resources/workflows/[%20CI%20]%20DNS%20/%20Python/badge.svg)
 [![Gitter](https://img.shields.io/gitter/room/ionos-cloud/sdk-general)](https://gitter.im/ionos-cloud/sdk-general)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sdk-python-dns&metric=alert_status)](https://sonarcloud.io/summary?id=sdk-python-dns)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sdk-python-dns&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sdk-python-dns)
