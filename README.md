@@ -1,4 +1,3 @@
-![CI](https://github.com/ionos-cloud/sdk-resources/workflows/[%20CI%20]%20DNS%20/%20Python/badge.svg)
 [![Gitter](https://img.shields.io/gitter/room/ionos-cloud/sdk-general)](https://gitter.im/ionos-cloud/sdk-general)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sdk-python-dns&metric=alert_status)](https://sonarcloud.io/summary?id=sdk-python-dns)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sdk-python-dns&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sdk-python-dns)
@@ -15,7 +14,7 @@
 
 # Python API client for ionoscloud_dns
 
-DNS API Specification
+Cloud DNS service helps IONOS Cloud customers to automate DNS Zone and Record management.
 
 
 ## Overview
@@ -137,12 +136,26 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 
 | Class | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| RecordsApi | [**records_get**](docs/api/RecordsApi.md#records_get) | **GET** /records | Retrieve all records |
+| DNSSECApi | [**zones_keys_delete**](docs/api/DNSSECApi.md#zones_keys_delete) | **DELETE** /zones/{zoneId}/keys | Delete a DNSSEC key |
+| DNSSECApi | [**zones_keys_get**](docs/api/DNSSECApi.md#zones_keys_get) | **GET** /zones/{zoneId}/keys | Retrieve a DNSSEC key |
+| DNSSECApi | [**zones_keys_post**](docs/api/DNSSECApi.md#zones_keys_post) | **POST** /zones/{zoneId}/keys | Create a DNSSEC key |
+| QuotaApi | [**quota_get**](docs/api/QuotaApi.md#quota_get) | **GET** /quota | Retrieve resources quota |
+| RecordsApi | [**records_get**](docs/api/RecordsApi.md#records_get) | **GET** /records | Retrieve all records from primary zones |
+| RecordsApi | [**secondaryzones_records_get**](docs/api/RecordsApi.md#secondaryzones_records_get) | **GET** /secondaryzones/{secondaryZoneId}/records | Retrieve records for a secondary zone |
 | RecordsApi | [**zones_records_delete**](docs/api/RecordsApi.md#zones_records_delete) | **DELETE** /zones/{zoneId}/records/{recordId} | Delete a record |
 | RecordsApi | [**zones_records_find_by_id**](docs/api/RecordsApi.md#zones_records_find_by_id) | **GET** /zones/{zoneId}/records/{recordId} | Retrieve a record |
 | RecordsApi | [**zones_records_get**](docs/api/RecordsApi.md#zones_records_get) | **GET** /zones/{zoneId}/records | Retrieve records |
 | RecordsApi | [**zones_records_post**](docs/api/RecordsApi.md#zones_records_post) | **POST** /zones/{zoneId}/records | Create a record |
 | RecordsApi | [**zones_records_put**](docs/api/RecordsApi.md#zones_records_put) | **PUT** /zones/{zoneId}/records/{recordId} | Ensure a record |
+| SecondaryZonesApi | [**secondaryzones_axfr_get**](docs/api/SecondaryZonesApi.md#secondaryzones_axfr_get) | **GET** /secondaryzones/{secondaryZoneId}/axfr | Get status of zone transfer |
+| SecondaryZonesApi | [**secondaryzones_axfr_put**](docs/api/SecondaryZonesApi.md#secondaryzones_axfr_put) | **PUT** /secondaryzones/{secondaryZoneId}/axfr | Start zone transfer |
+| SecondaryZonesApi | [**secondaryzones_delete**](docs/api/SecondaryZonesApi.md#secondaryzones_delete) | **DELETE** /secondaryzones/{secondaryZoneId} | Delete a secondary zone |
+| SecondaryZonesApi | [**secondaryzones_find_by_id**](docs/api/SecondaryZonesApi.md#secondaryzones_find_by_id) | **GET** /secondaryzones/{secondaryZoneId} | Retrieve a secondary zone |
+| SecondaryZonesApi | [**secondaryzones_get**](docs/api/SecondaryZonesApi.md#secondaryzones_get) | **GET** /secondaryzones | Retrieve secondary zones |
+| SecondaryZonesApi | [**secondaryzones_post**](docs/api/SecondaryZonesApi.md#secondaryzones_post) | **POST** /secondaryzones | Create a secondary zone |
+| SecondaryZonesApi | [**secondaryzones_put**](docs/api/SecondaryZonesApi.md#secondaryzones_put) | **PUT** /secondaryzones/{secondaryZoneId} | Ensure a secondary zone |
+| ZoneFilesApi | [**zones_zonefile_get**](docs/api/ZoneFilesApi.md#zones_zonefile_get) | **GET** /zones/{zoneId}/zonefile | Retrieve a zone file |
+| ZoneFilesApi | [**zones_zonefile_put**](docs/api/ZoneFilesApi.md#zones_zonefile_put) | **PUT** /zones/{zoneId}/zonefile | Updates a zone with a file |
 | ZonesApi | [**zones_delete**](docs/api/ZonesApi.md#zones_delete) | **DELETE** /zones/{zoneId} | Delete a zone |
 | ZonesApi | [**zones_find_by_id**](docs/api/ZonesApi.md#zones_find_by_id) | **GET** /zones/{zoneId} | Retrieve a zone |
 | ZonesApi | [**zones_get**](docs/api/ZonesApi.md#zones_get) | **GET** /zones | Retrieve zones |
@@ -157,25 +170,58 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 <details >
 <summary title="Click to toggle">API models list</summary>
 
+ - [Algorithm](docs/models/Algorithm)
+ - [CommonZone](docs/models/CommonZone)
+ - [CommonZoneRead](docs/models/CommonZoneRead)
+ - [CommonZoneReadList](docs/models/CommonZoneReadList)
+ - [DnssecKey](docs/models/DnssecKey)
+ - [DnssecKeyCreate](docs/models/DnssecKeyCreate)
+ - [DnssecKeyParameters](docs/models/DnssecKeyParameters)
+ - [DnssecKeyReadList](docs/models/DnssecKeyReadList)
+ - [DnssecKeyReadListMetadata](docs/models/DnssecKeyReadListMetadata)
  - [Error](docs/models/Error)
  - [ErrorMessages](docs/models/ErrorMessages)
+ - [KeyData](docs/models/KeyData)
+ - [KeyParameters](docs/models/KeyParameters)
+ - [KskBits](docs/models/KskBits)
  - [Links](docs/models/Links)
  - [Metadata](docs/models/Metadata)
+ - [MetadataForSecondaryZoneRecords](docs/models/MetadataForSecondaryZoneRecords)
  - [MetadataWithStateFqdnZoneId](docs/models/MetadataWithStateFqdnZoneId)
  - [MetadataWithStateFqdnZoneIdAllOf](docs/models/MetadataWithStateFqdnZoneIdAllOf)
  - [MetadataWithStateNameservers](docs/models/MetadataWithStateNameservers)
  - [MetadataWithStateNameserversAllOf](docs/models/MetadataWithStateNameserversAllOf)
+ - [NsecParameters](docs/models/NsecParameters)
  - [ProvisioningState](docs/models/ProvisioningState)
+ - [Quota](docs/models/Quota)
+ - [QuotaDetail](docs/models/QuotaDetail)
  - [Record](docs/models/Record)
  - [RecordCreate](docs/models/RecordCreate)
  - [RecordEnsure](docs/models/RecordEnsure)
  - [RecordRead](docs/models/RecordRead)
  - [RecordReadList](docs/models/RecordReadList)
+ - [SecondaryZone](docs/models/SecondaryZone)
+ - [SecondaryZoneAllOf](docs/models/SecondaryZoneAllOf)
+ - [SecondaryZoneCreate](docs/models/SecondaryZoneCreate)
+ - [SecondaryZoneEnsure](docs/models/SecondaryZoneEnsure)
+ - [SecondaryZoneRead](docs/models/SecondaryZoneRead)
+ - [SecondaryZoneReadAllOf](docs/models/SecondaryZoneReadAllOf)
+ - [SecondaryZoneReadList](docs/models/SecondaryZoneReadList)
+ - [SecondaryZoneReadListAllOf](docs/models/SecondaryZoneReadListAllOf)
+ - [SecondaryZoneRecordRead](docs/models/SecondaryZoneRecordRead)
+ - [SecondaryZoneRecordReadList](docs/models/SecondaryZoneRecordReadList)
+ - [SecondaryZoneRecordReadListMetadata](docs/models/SecondaryZoneRecordReadListMetadata)
  - [Zone](docs/models/Zone)
+ - [ZoneAllOf](docs/models/ZoneAllOf)
  - [ZoneCreate](docs/models/ZoneCreate)
  - [ZoneEnsure](docs/models/ZoneEnsure)
  - [ZoneRead](docs/models/ZoneRead)
+ - [ZoneReadAllOf](docs/models/ZoneReadAllOf)
  - [ZoneReadList](docs/models/ZoneReadList)
+ - [ZoneReadListAllOf](docs/models/ZoneReadListAllOf)
+ - [ZoneTransferPrimaryIpStatus](docs/models/ZoneTransferPrimaryIpStatus)
+ - [ZoneTransferPrimaryIpsStatus](docs/models/ZoneTransferPrimaryIpsStatus)
+ - [ZskBits](docs/models/ZskBits)
 
 
 [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)

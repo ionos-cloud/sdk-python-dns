@@ -12,7 +12,7 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 
 
 # **zones_delete**
-> zones_delete(zone_id)
+> object zones_delete(zone_id)
 
 Delete a zone
 
@@ -28,7 +28,7 @@ Deletes the specified zone and all of the records it contains.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -44,7 +44,7 @@ tokenAuth
 
 Retrieve a zone
 
-Returns a DNS zone by ID.
+Returns a DNS zone by given ID.
 
 ### Example
 
@@ -131,7 +131,7 @@ tokenAuth
 
 Ensure a zone
 
-Ensures that a zone with the provided ID is created or modified. In order to successfully update zone - all JSON parameters must be passed.
+Ensures that a zone with the provided ID is created or modified.  In order to successfully update zone - all JSON parameters must be passed. 
 
 ### Example
 

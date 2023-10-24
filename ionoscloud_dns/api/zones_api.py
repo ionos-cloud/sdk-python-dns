@@ -42,7 +42,7 @@ class ZonesApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: None
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.zones_delete_with_http_info(zone_id, **kwargs)  # noqa: E501
@@ -79,7 +79,7 @@ class ZonesApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: None
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -133,7 +133,7 @@ class ZonesApi(object):
         # Authentication setting
         auth_settings = ['tokenAuth']  # noqa: E501
 
-        response_type = None
+        response_type = 'object'
         if 'response_type' in kwargs:
             response_type = kwargs['response_type']
 
@@ -157,7 +157,7 @@ class ZonesApi(object):
     def zones_find_by_id(self, zone_id, **kwargs):  # noqa: E501
         """Retrieve a zone  # noqa: E501
 
-        Returns a DNS zone by ID.  # noqa: E501
+        Returns a DNS zone by given ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -187,7 +187,7 @@ class ZonesApi(object):
     def zones_find_by_id_with_http_info(self, zone_id, **kwargs):  # noqa: E501
         """Retrieve a zone  # noqa: E501
 
-        Returns a DNS zone by ID.  # noqa: E501
+        Returns a DNS zone by given ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -595,7 +595,7 @@ class ZonesApi(object):
     def zones_put(self, zone_id, zone_ensure, **kwargs):  # noqa: E501
         """Ensure a zone  # noqa: E501
 
-        Ensures that a zone with the provided ID is created or modified. In order to successfully update zone - all JSON parameters must be passed.  # noqa: E501
+        Ensures that a zone with the provided ID is created or modified.  In order to successfully update zone - all JSON parameters must be passed.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -627,7 +627,7 @@ class ZonesApi(object):
     def zones_put_with_http_info(self, zone_id, zone_ensure, **kwargs):  # noqa: E501
         """Ensure a zone  # noqa: E501
 
-        Ensures that a zone with the provided ID is created or modified. In order to successfully update zone - all JSON parameters must be passed.  # noqa: E501
+        Ensures that a zone with the provided ID is created or modified.  In order to successfully update zone - all JSON parameters must be passed.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
