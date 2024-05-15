@@ -101,6 +101,14 @@ You can use http proxies by setting the following environment variables:
 - `IONOS_HTTP_PROXY` - proxy URL
 - `IONOS_HTTP_PROXY_HEADERS` - proxy headers
 
+Each line in `IONOS_HTTP_PROXY_HEADERS` represents one header, where the header name and value is separated by a colon. Newline characters within a value need to be escaped. See this example:
+```
+Connection: Keep-Alive
+User-Info: MyID
+User-Group: my long\nheader value
+```
+
+
 ### Changing the base URL
 
 Base URL for the HTTP operation can be changed in the following way:
@@ -146,21 +154,26 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 | RecordsApi | [**zones_records_find_by_id**](docs/api/RecordsApi.md#zones_records_find_by_id) | **GET** /zones/{zoneId}/records/{recordId} | Retrieve a record |
 | RecordsApi | [**zones_records_get**](docs/api/RecordsApi.md#zones_records_get) | **GET** /zones/{zoneId}/records | Retrieve records |
 | RecordsApi | [**zones_records_post**](docs/api/RecordsApi.md#zones_records_post) | **POST** /zones/{zoneId}/records | Create a record |
-| RecordsApi | [**zones_records_put**](docs/api/RecordsApi.md#zones_records_put) | **PUT** /zones/{zoneId}/records/{recordId} | Ensure a record |
+| RecordsApi | [**zones_records_put**](docs/api/RecordsApi.md#zones_records_put) | **PUT** /zones/{zoneId}/records/{recordId} | Update a record |
+| ReverseRecordsApi | [**reverserecords_delete**](docs/api/ReverseRecordsApi.md#reverserecords_delete) | **DELETE** /reverserecords/{reverserecordId} | Delete a reverse DNS record |
+| ReverseRecordsApi | [**reverserecords_find_by_id**](docs/api/ReverseRecordsApi.md#reverserecords_find_by_id) | **GET** /reverserecords/{reverserecordId} | Retrieve a reverse DNS record |
+| ReverseRecordsApi | [**reverserecords_get**](docs/api/ReverseRecordsApi.md#reverserecords_get) | **GET** /reverserecords | Retrieves existing reverse DNS records |
+| ReverseRecordsApi | [**reverserecords_post**](docs/api/ReverseRecordsApi.md#reverserecords_post) | **POST** /reverserecords | Create a reverse DNS record |
+| ReverseRecordsApi | [**reverserecords_put**](docs/api/ReverseRecordsApi.md#reverserecords_put) | **PUT** /reverserecords/{reverserecordId} | Update a reverse DNS record |
 | SecondaryZonesApi | [**secondaryzones_axfr_get**](docs/api/SecondaryZonesApi.md#secondaryzones_axfr_get) | **GET** /secondaryzones/{secondaryZoneId}/axfr | Get status of zone transfer |
 | SecondaryZonesApi | [**secondaryzones_axfr_put**](docs/api/SecondaryZonesApi.md#secondaryzones_axfr_put) | **PUT** /secondaryzones/{secondaryZoneId}/axfr | Start zone transfer |
 | SecondaryZonesApi | [**secondaryzones_delete**](docs/api/SecondaryZonesApi.md#secondaryzones_delete) | **DELETE** /secondaryzones/{secondaryZoneId} | Delete a secondary zone |
 | SecondaryZonesApi | [**secondaryzones_find_by_id**](docs/api/SecondaryZonesApi.md#secondaryzones_find_by_id) | **GET** /secondaryzones/{secondaryZoneId} | Retrieve a secondary zone |
 | SecondaryZonesApi | [**secondaryzones_get**](docs/api/SecondaryZonesApi.md#secondaryzones_get) | **GET** /secondaryzones | Retrieve secondary zones |
 | SecondaryZonesApi | [**secondaryzones_post**](docs/api/SecondaryZonesApi.md#secondaryzones_post) | **POST** /secondaryzones | Create a secondary zone |
-| SecondaryZonesApi | [**secondaryzones_put**](docs/api/SecondaryZonesApi.md#secondaryzones_put) | **PUT** /secondaryzones/{secondaryZoneId} | Ensure a secondary zone |
+| SecondaryZonesApi | [**secondaryzones_put**](docs/api/SecondaryZonesApi.md#secondaryzones_put) | **PUT** /secondaryzones/{secondaryZoneId} | Update a secondary zone |
 | ZoneFilesApi | [**zones_zonefile_get**](docs/api/ZoneFilesApi.md#zones_zonefile_get) | **GET** /zones/{zoneId}/zonefile | Retrieve a zone file |
 | ZoneFilesApi | [**zones_zonefile_put**](docs/api/ZoneFilesApi.md#zones_zonefile_put) | **PUT** /zones/{zoneId}/zonefile | Updates a zone with a file |
 | ZonesApi | [**zones_delete**](docs/api/ZonesApi.md#zones_delete) | **DELETE** /zones/{zoneId} | Delete a zone |
 | ZonesApi | [**zones_find_by_id**](docs/api/ZonesApi.md#zones_find_by_id) | **GET** /zones/{zoneId} | Retrieve a zone |
 | ZonesApi | [**zones_get**](docs/api/ZonesApi.md#zones_get) | **GET** /zones | Retrieve zones |
 | ZonesApi | [**zones_post**](docs/api/ZonesApi.md#zones_post) | **POST** /zones | Create a zone |
-| ZonesApi | [**zones_put**](docs/api/ZonesApi.md#zones_put) | **PUT** /zones/{zoneId} | Ensure a zone |
+| ZonesApi | [**zones_put**](docs/api/ZonesApi.md#zones_put) | **PUT** /zones/{zoneId} | Update a zone |
 
 </details>
 
@@ -177,8 +190,12 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
  - [DnssecKey](docs/models/DnssecKey)
  - [DnssecKeyCreate](docs/models/DnssecKeyCreate)
  - [DnssecKeyParameters](docs/models/DnssecKeyParameters)
+ - [DnssecKeyReadCreation](docs/models/DnssecKeyReadCreation)
  - [DnssecKeyReadList](docs/models/DnssecKeyReadList)
  - [DnssecKeyReadListMetadata](docs/models/DnssecKeyReadListMetadata)
+ - [DnssecKeyReadListProperties](docs/models/DnssecKeyReadListProperties)
+ - [DnssecKeyReadListPropertiesKeyParameters](docs/models/DnssecKeyReadListPropertiesKeyParameters)
+ - [DnssecKeyReadListPropertiesNsecParameters](docs/models/DnssecKeyReadListPropertiesNsecParameters)
  - [Error](docs/models/Error)
  - [ErrorMessages](docs/models/ErrorMessages)
  - [KeyData](docs/models/KeyData)
@@ -191,6 +208,7 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
  - [MetadataWithStateFqdnZoneIdAllOf](docs/models/MetadataWithStateFqdnZoneIdAllOf)
  - [MetadataWithStateNameservers](docs/models/MetadataWithStateNameservers)
  - [MetadataWithStateNameserversAllOf](docs/models/MetadataWithStateNameserversAllOf)
+ - [NsecMode](docs/models/NsecMode)
  - [NsecParameters](docs/models/NsecParameters)
  - [ProvisioningState](docs/models/ProvisioningState)
  - [Quota](docs/models/Quota)
@@ -200,6 +218,11 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
  - [RecordEnsure](docs/models/RecordEnsure)
  - [RecordRead](docs/models/RecordRead)
  - [RecordReadList](docs/models/RecordReadList)
+ - [ReverseRecord](docs/models/ReverseRecord)
+ - [ReverseRecordCreate](docs/models/ReverseRecordCreate)
+ - [ReverseRecordEnsure](docs/models/ReverseRecordEnsure)
+ - [ReverseRecordRead](docs/models/ReverseRecordRead)
+ - [ReverseRecordsReadList](docs/models/ReverseRecordsReadList)
  - [SecondaryZone](docs/models/SecondaryZone)
  - [SecondaryZoneAllOf](docs/models/SecondaryZoneAllOf)
  - [SecondaryZoneCreate](docs/models/SecondaryZoneCreate)

@@ -10,7 +10,7 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 | [**zones_records_find_by_id**](RecordsApi.md#zones_records_find_by_id) | **GET** /zones/{zoneId}/records/{recordId} | Retrieve a record |
 | [**zones_records_get**](RecordsApi.md#zones_records_get) | **GET** /zones/{zoneId}/records | Retrieve records |
 | [**zones_records_post**](RecordsApi.md#zones_records_post) | **POST** /zones/{zoneId}/records | Create a record |
-| [**zones_records_put**](RecordsApi.md#zones_records_put) | **PUT** /zones/{zoneId}/records/{recordId} | Ensure a record |
+| [**zones_records_put**](RecordsApi.md#zones_records_put) | **PUT** /zones/{zoneId}/records/{recordId} | Update a record |
 
 
 # **records_get**
@@ -193,9 +193,9 @@ tokenAuth
 # **zones_records_put**
 > RecordRead zones_records_put(zone_id, record_id, record_ensure)
 
-Ensure a record
+Update a record
 
-Ensures that a DNS record with the provided ID is created or modified. In order to successfully update record - all JSON parameters must be passed.
+Updates or creates a DNS record for the provided record ID.
 
 ### Example
 

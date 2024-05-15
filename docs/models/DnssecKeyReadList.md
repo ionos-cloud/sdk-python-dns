@@ -7,5 +7,6 @@
 | **type** | **str** |  | [optional]  |
 | **href** | **str** |  | [optional] [readonly]  |
 | **metadata** | [**DnssecKeyReadListMetadata**](DnssecKeyReadListMetadata.md) |  | [optional]  |
+| **properties** | [**DnssecKeyReadListProperties**](DnssecKeyReadListProperties.md) |  | [optional]  |
 
 

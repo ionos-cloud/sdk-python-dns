@@ -927,9 +927,9 @@ class RecordsApi(object):
             _request_auth=local_var_params.get('_request_auth'))
 
     def zones_records_put(self, zone_id, record_id, record_ensure, **kwargs):  # noqa: E501
-        """Ensure a record  # noqa: E501
+        """Update a record  # noqa: E501
 
-        Ensures that a DNS record with the provided ID is created or modified. In order to successfully update record - all JSON parameters must be passed.  # noqa: E501
+        Updates or creates a DNS record for the provided record ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -961,9 +961,9 @@ class RecordsApi(object):
         return self.zones_records_put_with_http_info(zone_id, record_id, record_ensure, **kwargs)  # noqa: E501
 
     def zones_records_put_with_http_info(self, zone_id, record_id, record_ensure, **kwargs):  # noqa: E501
-        """Ensure a record  # noqa: E501
+        """Update a record  # noqa: E501
 
-        Ensures that a DNS record with the provided ID is created or modified. In order to successfully update record - all JSON parameters must be passed.  # noqa: E501
+        Updates or creates a DNS record for the provided record ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

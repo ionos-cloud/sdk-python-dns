@@ -318,7 +318,7 @@ class DNSSECApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: object
+        :rtype: DnssecKeyReadCreation
         """
         kwargs['_return_http_data_only'] = True
         return self.zones_keys_post_with_http_info(zone_id, dnssec_key_create, **kwargs)  # noqa: E501
@@ -357,7 +357,7 @@ class DNSSECApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(DnssecKeyReadCreation, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -422,7 +422,7 @@ class DNSSECApi(object):
         # Authentication setting
         auth_settings = ['tokenAuth']  # noqa: E501
 
-        response_type = 'object'
+        response_type = 'DnssecKeyReadCreation'
         if 'response_type' in kwargs:
             response_type = kwargs['response_type']
 

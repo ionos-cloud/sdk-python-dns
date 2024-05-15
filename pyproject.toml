@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ionoscloud_dns"
-version = "1.0.0"
+version = "1.2.0"
 description = "IONOS Cloud - DNS API"
 authors = ["IONOS Cloud Support <support@cloud.ionos.com>"]
 license = "NoLicense"

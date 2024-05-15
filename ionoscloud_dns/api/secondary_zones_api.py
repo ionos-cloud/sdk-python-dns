@@ -867,9 +867,9 @@ class SecondaryZonesApi(object):
             _request_auth=local_var_params.get('_request_auth'))
 
     def secondaryzones_put(self, secondary_zone_id, secondary_zone_ensure, **kwargs):  # noqa: E501
-        """Ensure a secondary zone  # noqa: E501
+        """Update a secondary zone  # noqa: E501
 
-        Ensures that a secondary zone with the provided ID is created or modified. In order to successfully update secondary zone - all JSON parameters must be passed.  # noqa: E501
+        Updates or creates a secondary zone for the provided secondary Zone ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -899,9 +899,9 @@ class SecondaryZonesApi(object):
         return self.secondaryzones_put_with_http_info(secondary_zone_id, secondary_zone_ensure, **kwargs)  # noqa: E501
 
     def secondaryzones_put_with_http_info(self, secondary_zone_id, secondary_zone_ensure, **kwargs):  # noqa: E501
-        """Ensure a secondary zone  # noqa: E501
+        """Update a secondary zone  # noqa: E501
 
-        Ensures that a secondary zone with the provided ID is created or modified. In order to successfully update secondary zone - all JSON parameters must be passed.  # noqa: E501
+        Updates or creates a secondary zone for the provided secondary Zone ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

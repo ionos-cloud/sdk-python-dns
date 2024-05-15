@@ -66,7 +66,7 @@ tokenAuth
  - **Accept**: application/json
 
 # **zones_keys_post**
-> object zones_keys_post(zone_id, dnssec_key_create)
+> DnssecKeyReadCreation zones_keys_post(zone_id, dnssec_key_create)
 
 Create a DNSSEC key
 
@@ -83,7 +83,7 @@ Enable DNSSEC keys and create associated DNSKEY records for your DNS zone.
 
 ### Return type
 
-**object**
+[**DnssecKeyReadCreation**](../models/DnssecKeyReadCreation.md)
 
 ### Authorization
 

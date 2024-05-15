@@ -10,7 +10,7 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 | [**secondaryzones_find_by_id**](SecondaryZonesApi.md#secondaryzones_find_by_id) | **GET** /secondaryzones/{secondaryZoneId} | Retrieve a secondary zone |
 | [**secondaryzones_get**](SecondaryZonesApi.md#secondaryzones_get) | **GET** /secondaryzones | Retrieve secondary zones |
 | [**secondaryzones_post**](SecondaryZonesApi.md#secondaryzones_post) | **POST** /secondaryzones | Create a secondary zone |
-| [**secondaryzones_put**](SecondaryZonesApi.md#secondaryzones_put) | **PUT** /secondaryzones/{secondaryZoneId} | Ensure a secondary zone |
+| [**secondaryzones_put**](SecondaryZonesApi.md#secondaryzones_put) | **PUT** /secondaryzones/{secondaryZoneId} | Update a secondary zone |
 
 
 # **secondaryzones_axfr_get**
@@ -187,9 +187,9 @@ tokenAuth
 # **secondaryzones_put**
 > SecondaryZoneRead secondaryzones_put(secondary_zone_id, secondary_zone_ensure)
 
-Ensure a secondary zone
+Update a secondary zone
 
-Ensures that a secondary zone with the provided ID is created or modified. In order to successfully update secondary zone - all JSON parameters must be passed.
+Updates or creates a secondary zone for the provided secondary Zone ID.
 
 ### Example
 

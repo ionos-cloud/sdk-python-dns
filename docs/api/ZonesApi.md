@@ -8,7 +8,7 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 | [**zones_find_by_id**](ZonesApi.md#zones_find_by_id) | **GET** /zones/{zoneId} | Retrieve a zone |
 | [**zones_get**](ZonesApi.md#zones_get) | **GET** /zones | Retrieve zones |
 | [**zones_post**](ZonesApi.md#zones_post) | **POST** /zones | Create a zone |
-| [**zones_put**](ZonesApi.md#zones_put) | **PUT** /zones/{zoneId} | Ensure a zone |
+| [**zones_put**](ZonesApi.md#zones_put) | **PUT** /zones/{zoneId} | Update a zone |
 
 
 # **zones_delete**
@@ -129,9 +129,9 @@ tokenAuth
 # **zones_put**
 > ZoneRead zones_put(zone_id, zone_ensure)
 
-Ensure a zone
+Update a zone
 
-Ensures that a zone with the provided ID is created or modified.  In order to successfully update zone - all JSON parameters must be passed. 
+Updates or creates a zone for the provided zone ID. 
 
 ### Example
 
