@@ -14,7 +14,7 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
 
 
 # **records_get**
-> RecordReadList records_get(filter_zone_id=filter_zone_id, filter_name=filter_name, filter_state=filter_state, offset=offset, limit=limit)
+> RecordReadList records_get(filter_zone_id=filter_zone_id, filter_name=filter_name, filter_state=filter_state, filter_type=filter_type, offset=offset, limit=limit)
 
 Retrieve all records from primary zones
 
@@ -29,6 +29,7 @@ Returns the list of all records for all customer DNS zones with the possibility 
 | **filter_zone_id** | **str**| Filter used to fetch only the records that contain specified zoneId. | [optional]  |
 | **filter_name** | **str**| Filter used to fetch only the records that contain specified record name. | [optional]  |
 | **filter_state** | [**ProvisioningState**](../models/.md)| Filter used to fetch only the records that are in certain state. | [optional]  |
+| **filter_type** | [**RecordType**](../models/.md)| Filter used to fetch only the records with specified type. | [optional]  |
 | **offset** | **int**| The first element (of the total list of elements) to include in the response. Use together with limit for pagination. | [optional] [default to 0] |
 | **limit** | **int**| The maximum number of elements to return. Use together with offset for pagination. | [optional] [default to 100] |
 

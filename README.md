@@ -68,13 +68,22 @@ import ionoscloud_dns
 
 ### Authentication
 
+All available server URLs are:
+
+- *https://dns.de-fra.ionos.com* - Frankfurt
+
+By default, *https://dns.de-fra.ionos.com* is used, however this can be overriden at authentication, either
+by setting the `IONOS_API_URL` environment variable or by specifying the `host` parameter when
+initializing the sdk client.
+
 The username and password **or** the authentication token can be manually specified when initializing the SDK client:
 
 ```python
 configuration = ionoscloud_dns.Configuration(
                 username='YOUR_USERNAME',
                 password='YOUR_PASSWORD',
-                token='YOUR_TOKEN'
+                token='YOUR_TOKEN',
+                host='SERVER_API_URL'
                 )
 client = ionoscloud_dns.ApiClient(configuration)
 ```
@@ -87,7 +96,8 @@ import os
 configuration = ionoscloud_dns.Configuration(
                 username=os.environ.get('IONOS_USERNAME'),
                 password=os.environ.get('IONOS_PASSWORD'),
-                token=os.environ.get('IONOS_TOKEN')
+                token=os.environ.get('IONOS_TOKEN'),
+                host=os.environ.get('IONOS_API_URL')
                 )
 client = ionoscloud_dns.ApiClient(configuration)
 ```
@@ -218,6 +228,7 @@ All URIs are relative to *https://dns.de-fra.ionos.com*
  - [RecordEnsure](docs/models/RecordEnsure)
  - [RecordRead](docs/models/RecordRead)
  - [RecordReadList](docs/models/RecordReadList)
+ - [RecordType](docs/models/RecordType)
  - [ReverseRecord](docs/models/ReverseRecord)
  - [ReverseRecordCreate](docs/models/ReverseRecordCreate)
  - [ReverseRecordEnsure](docs/models/ReverseRecordEnsure)

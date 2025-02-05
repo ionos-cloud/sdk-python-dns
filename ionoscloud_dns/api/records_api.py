@@ -33,6 +33,8 @@ class RecordsApi(object):
         :type filter_name: str
         :param filter_state: Filter used to fetch only the records that are in certain state.
         :type filter_state: ProvisioningState
+        :param filter_type: Filter used to fetch only the records with specified type.
+        :type filter_type: RecordType
         :param offset: The first element (of the total list of elements) to include in the response. Use together with limit for pagination.
         :type offset: int
         :param limit: The maximum number of elements to return. Use together with offset for pagination.
@@ -71,6 +73,8 @@ class RecordsApi(object):
         :type filter_name: str
         :param filter_state: Filter used to fetch only the records that are in certain state.
         :type filter_state: ProvisioningState
+        :param filter_type: Filter used to fetch only the records with specified type.
+        :type filter_type: RecordType
         :param offset: The first element (of the total list of elements) to include in the response. Use together with limit for pagination.
         :type offset: int
         :param limit: The maximum number of elements to return. Use together with offset for pagination.
@@ -104,6 +108,7 @@ class RecordsApi(object):
             'filter_zone_id',
             'filter_name',
             'filter_state',
+            'filter_type',
             'offset',
             'limit'
         ]
@@ -145,6 +150,8 @@ class RecordsApi(object):
             query_params.append(('filter.name', local_var_params['filter_name']))  # noqa: E501
         if 'filter_state' in local_var_params and local_var_params['filter_state'] is not None:  # noqa: E501
             query_params.append(('filter.state', local_var_params['filter_state']))  # noqa: E501
+        if 'filter_type' in local_var_params and local_var_params['filter_type'] is not None:  # noqa: E501
+            query_params.append(('filter.type', local_var_params['filter_type']))  # noqa: E501
         if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
             query_params.append(('offset', local_var_params['offset']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
