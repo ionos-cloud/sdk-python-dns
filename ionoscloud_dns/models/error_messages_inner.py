@@ -23,14 +23,13 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Links(BaseModel):
+class ErrorMessagesInner(BaseModel):
     """
-    URLs to navigate the different pages. As of now we always only return a single page. 
+    ErrorMessagesInner
     """ # noqa: E501
-    prev: Optional[StrictStr] = Field(default=None, description="URL (with offset and limit parameters) of the previous page; only present if offset is greater than 0. ")
-    var_self: Optional[StrictStr] = Field(default=None, description="URL (with offset and limit parameters) of the current page. ", alias="self")
-    next: Optional[StrictStr] = Field(default=None, description="URL (with offset and limit parameters) of the next page; only present if offset + limit is less than the total number of elements. ")
-    __properties: ClassVar[List[str]] = ["prev", "self", "next"]
+    error_code: Optional[StrictStr] = Field(default=None, description="Internal error code. ", alias="errorCode")
+    message: Optional[StrictStr] = Field(default=None, description="Human readable explanation of the issue. ")
+    __properties: ClassVar[List[str]] = ["errorCode", "message"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class Links(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Links from a JSON string"""
+        """Create an instance of ErrorMessagesInner from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -62,9 +61,6 @@ class Links(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
         ])
@@ -78,7 +74,7 @@ class Links(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Links from a dict"""
+        """Create an instance of ErrorMessagesInner from a dict"""
         if obj is None:
             return None
 
@@ -86,9 +82,8 @@ class Links(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "prev": obj.get("prev"),
-            "self": obj.get("self"),
-            "next": obj.get("next")
+            "errorCode": obj.get("errorCode"),
+            "message": obj.get("message")
         })
         return _obj
 
